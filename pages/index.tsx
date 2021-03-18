@@ -1,12 +1,19 @@
-import Head from 'next/head'
+import Head from "next/head";
+import dynamic from "next/dynamic";
+import { Header } from "../components";
+
+const LeafletMap = dynamic(() => import("../components/LeafletMap"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Bali Pet Finder | Rescue, Adopt, and Love</title>
       </Head>
-    </div>
-  )
+      <Header />
+      <LeafletMap />
+    </>
+  );
 }
