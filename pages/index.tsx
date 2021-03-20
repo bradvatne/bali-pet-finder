@@ -1,10 +1,6 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import { Header } from "../components";
-
-const LeafletMap = dynamic(() => import("../components/LeafletMap"), {
-  ssr: false,
-});
+import { GoogleMap, Menu } from "../components";
 
 export default function Home() {
   return (
@@ -12,8 +8,15 @@ export default function Home() {
       <Head>
         <title>Bali Pet Finder | Rescue, Adopt, and Love</title>
       </Head>
-      <Header />
-      <LeafletMap />
+      <div className="app-container">
+        <Menu />
+        <GoogleMap />
+        <style jsx>{`
+          .app-container {
+            display: flex;
+          }
+          `}</style>
+      </div>
     </>
   );
 }
