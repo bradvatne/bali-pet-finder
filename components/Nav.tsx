@@ -1,7 +1,9 @@
-import { signIn, signOut, useSession } from 'next-auth/client'
+import { signIn, signOut, useSession } from "next-auth/client";
+import { useState } from "react";
 
-export default function Nav() {
+export default function Nav({ toggleLogin }) {
   const [session, loading] = useSession();
+
   return (
     <nav>
       <div className="brand">Bali Pet Finder</div>
@@ -28,7 +30,7 @@ export default function Nav() {
         </ul>
       </div>
       <div className="user">
-        <a onClick={()=> signIn()}>Sign in</a>
+        <a onClick={() => toggleLogin()}>Sign in</a>
       </div>
       <style jsx>
         {`
@@ -44,6 +46,7 @@ export default function Nav() {
             box-shadow: -1px 4px 5px 0px rgba(0, 0, 0, 0.2);
             position: fixed;
             z-index: 10;
+            top: 0;
           }
 
           li {
@@ -56,7 +59,7 @@ export default function Nav() {
           .links {
             display: flex;
           }
-          a:hover{
+          a:hover {
             cursor: pointer;
           }
         `}
