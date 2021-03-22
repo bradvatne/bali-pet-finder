@@ -1,4 +1,4 @@
-import { Options, Listing } from "../components";
+import { Options, Listing } from ".";
 
 export default function Menu() {
   return (

@@ -8,10 +8,19 @@ export default function Nav() {
             <a href="#">Home</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="#">Mission</a>
           </li>
           <li>
             <a href="#">Blog</a>
+          </li>
+          <li>
+            <a href="#">Adopt</a>
+          </li>
+          <li>
+            <a href="#">Add</a>
+          </li>
+          <li>
+            <a href="#">Volunteer</a>
           </li>
         </ul>
       </div>
