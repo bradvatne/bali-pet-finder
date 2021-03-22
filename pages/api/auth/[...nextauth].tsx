@@ -5,14 +5,20 @@ export default NextAuth({
   // Configure one or more authentication providers
   providers: [
     Providers.Email({
-      server: process.env.EMAIL_SERVER, 
+      server: {
+        host: process.env.EMAIL_SERVER_HOST,
+        port: 465,
+        auth: {
+          user: process.env.EMAIL_SERVER_USER,
+          pass: process.env.EMAIL_SERVER_PASSWORD
+        }
+      },
       from: process.env.EMAIL_FROM
     }),
   ],
   pages: {
     signIn: "/auth/signin",
     error: "/auth/error", // Error code passed in query string as ?error=
-    verifyRequest: "/auth/verify-request", // (used for check email message)
   },
 
   // A database is optional, but required to persist accounts in a database

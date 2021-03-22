@@ -30,7 +30,11 @@ export default function Nav({ toggleLogin }) {
         </ul>
       </div>
       <div className="user">
-        <a onClick={() => toggleLogin()}>Sign in</a>
+        {session ? (
+          <a onClick={() => signOut()}>Sign Out</a>
+        ) : (
+          <a onClick={() => toggleLogin()}>Sign in</a>
+        )}
       </div>
       <style jsx>
         {`
