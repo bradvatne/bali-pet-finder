@@ -36,6 +36,33 @@ export default function Footer() {
         <p>© 2021 Bali Pet Finder, Inc. Privacy | Terms and Conditions</p>
         <p>English Facebook Instagram Twitter</p>
       </div>
+      <style jsx>
+        {`
+          footer {
+            width: 100%;
+            padding-top: 4rem;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+          }
+
+          footer > div {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .footer {
+            flex-basis: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        `}
+      </style>
     </footer>
   );
 }

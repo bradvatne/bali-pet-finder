@@ -1,4 +1,4 @@
-import { Options, Listing } from ".";
+import { Options, Listings } from ".";
 
 export default function Menu() {
   return (
@@ -8,23 +8,10 @@ export default function Menu() {
         <h1>Pets for Adoption in Kuta</h1>
         <Options />
         <p>Review our advice for adopting pets here.</p>
-        <div className="listings">
-          <Listing/>
-          <Listing/>
-          <Listing/>
-          <Listing/>
-          <Listing/>
-          <Listing/>
-          <Listing/>
-          <Listing/>
-          <Listing/>
-          <Listing/>
-        </div>
+        <Listings/>
       </div>
       <style jsx>
         {`
-        .listings {
-         
         }
           .menu-wrapper {
             padding: 1rem;
@@ -36,10 +23,6 @@ export default function Menu() {
           .menu {
             margin-top: 2rem;
            
-          }
-
-          .listings {
-            margin-top: 2rem;
           }
 
           @media(max-width: 1140px) {
