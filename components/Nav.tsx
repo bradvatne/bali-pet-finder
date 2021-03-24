@@ -1,7 +1,8 @@
 import { signIn, signOut, useSession } from "next-auth/client";
 import { useState } from "react";
+import { Modal } from ".";
 
-export default function Nav({ toggleLogin }) {
+export default function Nav({ toggleLogin, toggleAddModal }) {
   const [session, loading] = useSession();
 
   return (
@@ -22,7 +23,9 @@ export default function Nav({ toggleLogin }) {
             <a href="#">Adopt</a>
           </li>
           <li>
-            <a href="#">Add</a>
+            <a href="#" onClick={(e) => toggleAddModal(e)}>
+              Add
+            </a>
           </li>
           <li>
             <a href="#">Volunteer</a>
@@ -33,7 +36,7 @@ export default function Nav({ toggleLogin }) {
         {session ? (
           <a onClick={() => signOut()}>Sign Out</a>
         ) : (
-          <a onClick={() => toggleLogin()}>Sign in</a>
+          <span onClick={() => toggleLogin()}>Sign in</span>
         )}
       </div>
       <style jsx>

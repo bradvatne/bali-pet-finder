@@ -16,7 +16,6 @@ export default function Menu() {
           .menu-wrapper {
             padding: 1rem;
             flex-basis: 40%;
-            position: relative;
             margin-top: 63px;
           }
 

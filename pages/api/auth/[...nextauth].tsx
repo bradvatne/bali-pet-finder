@@ -16,9 +16,12 @@ export default NextAuth({
       },
       from: process.env.EMAIL_FROM,
     }),
+    Providers.Google({
+      clientId: process.env.GOOGLE_OAUTH,
+      clientSecret: process.env.GOOGLE_OAUTH_SECRET,
+    }),
   ],
   pages: {
-    signIn: "/auth/signin",
     error: "/auth/error", // Error code passed in query string as ?error=
   },
 
