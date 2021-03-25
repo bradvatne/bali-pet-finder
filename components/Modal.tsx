@@ -1,7 +1,13 @@
 export default function Modal({ toggle, show }) {
   return (
     <div className="backdrop" onClick={(e) => toggle(e)}>
-      <div className="modal">Add lost dog</div>
+      <div className="modal">
+        <h2>Help An Animal Find Its Home</h2>
+        <form>
+
+        </form>
+
+      </div>
       <style jsx>
         {`
           .backdrop {
@@ -18,8 +24,7 @@ export default function Modal({ toggle, show }) {
           }
 
           .modal {
-            max-width: 700px;
-            max-height: 500px;
+            padding: 2rem;
             background: white;
           }
         `}
